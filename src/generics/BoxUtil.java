@@ -8,7 +8,8 @@ public class BoxUtil {
         }
     }
 
-    public static void copyFreshFruitFromBoxToBox(final Box<? extends Fruit> src, final Box<? super Fruit> dest) {
+    public static <T extends Fruit> void copyFreshFruitFromBoxToBox(final Box<T> src,
+                                                                    final Box<? super T> dest) {
         if (src.get() != null && src.get().getFresh()) {
             dest.put(src.get());
         }
